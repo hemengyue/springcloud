@@ -3,6 +3,7 @@ package cn.how2j.springcloud.web;
 import cn.how2j.springcloud.pojo.Product;
 import cn.how2j.springcloud.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,10 +20,15 @@ import java.util.List;
 public class ProductController {
     @Autowired
     ProductService productService;
+
+    @Value("${version}")//从 config-server 去获取 version 信息了
+    String version;
+
     @RequestMapping("/products")
     public Object products(Model m) {
         List<Product> ps = productService.listProducts();
         System.out.println("feign拿到的数据为："+ps);
+        m.addAttribute("version", version);
         m.addAttribute("ps", ps);
         return "products";
     }

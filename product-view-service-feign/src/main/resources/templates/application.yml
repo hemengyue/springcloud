@@ -1,7 +1,7 @@
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+#eureka:
+ # client:
+  #  serviceUrl:
+   #   defaultZone: http://localhost:8761/eureka/  此处搬到bootstrap.yml去了
 spring:
   application:
     name: product-view-service-feign
@@ -15,3 +15,5 @@ spring:
     servlet:
           content-type: text/html
     mode: HTML5
+
+
