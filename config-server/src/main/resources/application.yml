@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      label: master  #表示分支
+      server:
+        git:
+          uri: https://github.com/hemengyue/springcloud-test/ #表示git地址
+          searchPaths: respo  #表示目录
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
