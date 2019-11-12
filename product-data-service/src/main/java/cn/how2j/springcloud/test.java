@@ -46,7 +46,7 @@ public class test {
         }catch (Exception e){
             num=defaultnum;
         }
-            //偷偷改了这里
+            //偷偷改了这
         System.out.println(num);
     }
 }
